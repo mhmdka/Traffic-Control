@@ -52,23 +52,23 @@ public class Save
         SimulationData data = (SimulationData)bf.Deserialize(file);
         file.Close();
 
-        currentLength = data.length;
-        currentWidth = data.width;
-        currentStreetNumber = data.streetNumber;
-        currentBuildingNumber = data.buildingNumber;
-        currentStreets = data.streets;
-        currentBuildings = data.buildings;
-        currentMap = data.map;
-        currentSettings = data.settings;
+        currentLength = data.Length;
+        currentWidth = data.Width;
+        currentStreetNumber = data.StreetNumber;
+        currentBuildingNumber = data.BuildingNumber;
+        currentStreets = data.Streets;
+        currentBuildings = data.Buildings;
+        currentMap = data.Map;
+        currentSettings = data.Settings;
 
-        Debug.Log(data.length);
-        Debug.Log(data.width);
-        Debug.Log(data.streetNumber);
-        Debug.Log(data.buildingNumber);
-        Debug.Log(data.streets);
-        Debug.Log(data.buildings);
-        Debug.Log(data.map);
-        Debug.Log(data.settings);
+        Debug.Log(data.Length);
+        Debug.Log(data.Width);
+        Debug.Log(data.StreetNumber);
+        Debug.Log(data.BuildingNumber);
+        Debug.Log(data.Streets);
+        Debug.Log(data.Buildings);
+        Debug.Log(data.Map);
+        Debug.Log(data.Settings);
     }
 
 
