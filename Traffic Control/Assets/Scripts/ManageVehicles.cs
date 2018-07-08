@@ -5,9 +5,10 @@ using System;
 
 public class ManageVehicles : MonoBehaviour
 {
-    //=================== properties ======================//
-    private readonly int MAP_WIDTH,MAP_LENGTH;
+    //==================================== properties ======================================//
 
+    private readonly int MAP_WIDTH,MAP_LENGTH;
+    public int NUMBER_OF_VEHICLES=4;
 
     protected bool isElementChanged = false;
     protected bool isEventOccured = false;
@@ -18,7 +19,7 @@ public class ManageVehicles : MonoBehaviour
 
 
 
-    //------------------ set/get -------------------------//
+    //----------- set/get ------------//
 
     public bool IsElementChanged
     {
@@ -53,21 +54,26 @@ public class ManageVehicles : MonoBehaviour
         Vehicle tmp_vehicle = new Vehicle(tmp_point, typeOfVehicle);
         vehicles.Add(tmp_vehicle);
     }
+	//-----------------------------------------
+	
+	private Point randomPointGenerator()
+	{
+		
+		Point point = new Point();
+		int index = rnd.Next(0, mapClass.Streets.Length-1);
+		point = mapClass.Streets[index].GetStartPoint();
+		return point;
+		
+	}
+    //---------------------------------------
 
     //public void manageMovement(Events events)
     //{
 
     //}
-   
-    private Point randomPointGenerator()
-    {
-        
-        Point point = new Point();
-        int index = rnd.Next(0, mapClass.Streets.Length);
-        point = mapClass.Streets[index].GetStartPoint();
-        return point;
 
-    }
+
+    //-----------------------------------------
 
 
 
@@ -75,7 +81,7 @@ public class ManageVehicles : MonoBehaviour
     void Start()
     {
         General gn = new General();
-        for (int i = 0; i < 5; i++){
+        for (int i = 0; i < NUMBER_OF_VEHICLES; i++){
             createVehicle(gn);
         }
 
