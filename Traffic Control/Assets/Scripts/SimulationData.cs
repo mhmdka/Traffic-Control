@@ -1,24 +1,128 @@
 ﻿[System.Serializable]
 public class SimulationData
 {
-    public int length;
-    public int width;
-    public int streetNumber;
-    public int buildingNumber;
-    public Street[] streets;
-    public Building[] buildings;
-    public int[][] map;
-    public Settings settings;
+    private int length;
+    private int width;
+    private int streetNumber;
+    private int buildingNumber;
+    private Street[] streets;
+    private Building[] buildings;
+    private int[][] map;
+    private Settings settings;
+
+    public int Length
+    {
+        get
+        {
+            return length;
+        }
+
+        set
+        {
+            length = value;
+        }
+    }
+
+    public int Width
+    {
+        get
+        {
+            return width;
+        }
+
+        set
+        {
+            width = value;
+        }
+    }
+
+    public int StreetNumber
+    {
+        get
+        {
+            return streetNumber;
+        }
+
+        set
+        {
+            streetNumber = value;
+        }
+    }
+
+    public int BuildingNumber
+    {
+        get
+        {
+            return buildingNumber;
+        }
+
+        set
+        {
+            buildingNumber = value;
+        }
+    }
+
+    public Street[] Streets
+    {
+        get
+        {
+            return streets;
+        }
+
+        set
+        {
+            streets = value;
+        }
+    }
+
+    public Building[] Buildings
+    {
+        get
+        {
+            return buildings;
+        }
+
+        set
+        {
+            buildings = value;
+        }
+    }
+
+    public int[][] Map
+    {
+        get
+        {
+            return map;
+        }
+
+        set
+        {
+            map = value;
+        }
+    }
+
+    public Settings Settings
+    {
+        get
+        {
+            return settings;
+        }
+
+        set
+        {
+            settings = value;
+        }
+    }
 
     public SimulationData(int length, int width, int streetNumber, int buildingNumber, Street[] streets, Building[] buildings, int[][] map, Settings settings)
     {
-        this.length = length;
-        this.width = width;
-        this.streetNumber = streetNumber;
-        this.buildingNumber = buildingNumber;
-        this.streets = streets;
-        this.buildings = buildings;
-        this.map = map;
-        this.settings = settings;
+        this.Length = length;
+        this.Width = width;
+        this.StreetNumber = streetNumber;
+        this.BuildingNumber = buildingNumber;
+        this.Streets = streets;
+        this.Buildings = buildings;
+        this.Map = map;
+        this.Settings = settings;
     }
 }

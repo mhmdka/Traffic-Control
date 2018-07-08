@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 [System.Serializable]
-public class MapClass : MonoBehaviour {
+public class MapClass
+{
 
     private int length;
     private int width;
@@ -107,12 +108,13 @@ public class MapClass : MonoBehaviour {
         }
     }
 
-    public void setCarNumber(float cn) {
+    public void setCarNumber(float cn)
+    {
 
         settings.CarNumber = (int)cn;
     }
 
-    
+
 
 
     //SAVE & LOAD
@@ -144,11 +146,6 @@ public class MapClass : MonoBehaviour {
 
     }
 
-    public void test()
-    {
-        print("a");
-    }
-
 
 
 
@@ -168,40 +165,46 @@ public class MapClass : MonoBehaviour {
 
 
     //Must be filled later!
-    public MapClass() {
+    public MapClass()
+    {
         settings = new Settings();
         Streets = new Street[20];
         Buildings = new Building[20];
         Map = new int[length][];
     }
 
-    public void AddStreet(Point start, Point end) {
+    public void AddStreet(Point start, Point end)
+    {
         int i;
         for (i = 0; Streets[i] != null; i++) ;
         Streets[i] = new Street(start, end);
         if (start.Y == end.Y)
         {
-            for (int j = 0; j <= System.Math.Abs(start.X - end.X) ; j++)
+            for (int j = 0; j <= System.Math.Abs(start.X - end.X); j++)
             {
-                Map[start.Y][start.X+j] = Streets[i].StreetNumber + 100;
+                Map[start.Y][start.X + j] = Streets[i].StreetNumber + 100;
             }
         }
-        else {
-            for (int j = 0; j <= System.Math.Abs(start.Y - end.Y) ; j++)
+        else
+        {
+            for (int j = 0; j <= System.Math.Abs(start.Y - end.Y); j++)
             {
-                Map[start.Y+j][start.X] = Streets[i].StreetNumber + 100;
+                Map[start.Y + j][start.X] = Streets[i].StreetNumber + 100;
             }
         }
 
     }
 
-    public void AddBuilding(Point topLeft, Point topRight, Point bottomRight, Point bottomLeft) {
+    public void AddBuilding(Point topLeft, Point topRight, Point bottomRight, Point bottomLeft)
+    {
         int i;
         for (i = 0; Buildings[i] != null; i++) ;
         Buildings[i] = new Building(topLeft, topRight, bottomRight, bottomLeft);
-        for (int j = 0; j <= System.Math.Abs(topLeft.Y - topRight.Y);j++) {
-            for (int k = 0; k <= System.Math.Abs(topLeft.X - bottomRight.X); k++) {
-                Map[topLeft.Y + j][topLeft.X+k] = 200 + Buildings[i].BuildingNumber;
+        for (int j = 0; j <= System.Math.Abs(topLeft.Y - topRight.Y); j++)
+        {
+            for (int k = 0; k <= System.Math.Abs(topLeft.X - bottomRight.X); k++)
+            {
+                Map[topLeft.Y + j][topLeft.X + k] = 200 + Buildings[i].BuildingNumber;
             }
         }
 
@@ -209,12 +212,14 @@ public class MapClass : MonoBehaviour {
 
 
     // Use this for initialization
-    void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    void Start()
+    {
+
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+
+    }
 }
