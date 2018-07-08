@@ -1,7 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+
+
 [System.Serializable]
+
+
 public class MapClass
 {
 
@@ -180,16 +184,37 @@ public class MapClass
         Streets[i] = new Street(start, end);
         if (start.Y == end.Y)
         {
-            for (int j = 0; j <= System.Math.Abs(start.X - end.X); j++)
+            if (start.X < end.X)
             {
-                Map[start.Y][start.X + j] = Streets[i].StreetNumber + 100;
+                for (int j = 0; j <= System.Math.Abs(start.X - end.X); j++)
+                {
+                    Map[start.Y][start.X + j] = Streets[i].StreetNumber + 100;
+                }
+            }
+            else
+            {
+                for (int j = 0; j <= System.Math.Abs(start.X - end.X); j++)
+                {
+                    Map[end.Y][end.X + j] = Streets[i].StreetNumber + 100;
+                }
             }
         }
         else
         {
-            for (int j = 0; j <= System.Math.Abs(start.Y - end.Y); j++)
+
+            if (start.Y < end.Y)
             {
-                Map[start.Y + j][start.X] = Streets[i].StreetNumber + 100;
+                for (int j = 0; j <= System.Math.Abs(start.Y - end.Y); j++)
+                {
+                    Map[start.Y + j][start.X] = Streets[i].StreetNumber + 100;
+                }
+            }
+            else {
+                for (int j = 0; j <= System.Math.Abs(start.Y - end.Y); j++)
+                {
+                    Map[end.Y + j][end.X] = Streets[i].StreetNumber + 100;
+                }
+
             }
         }
 

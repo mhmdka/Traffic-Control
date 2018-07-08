@@ -10,8 +10,8 @@ public class Street : MonoBehaviour {
     private int trafficCoef;
     private int maxCoef;
     private readonly int elementType=1;
-    private bool endToStart;
-    private bool startToEnd;
+   // private bool endToStart;
+   // private bool startToEnd;
     private int streetNumber;
 
     public int Length
@@ -91,31 +91,31 @@ public class Street : MonoBehaviour {
         return System.Math.Abs(distance);
     }
 
-    public bool StartToEnd
-    {
-        get
-        {
-            return startToEnd;
-        }
+    //public bool StartToEnd
+    //{
+    //    get
+    //    {
+    //        return startToEnd;
+    //    }
 
-        set
-        {
-            startToEnd = value;
-        }
-    }
+    //    set
+    //    {
+    //        startToEnd = value;
+    //    }
+    //}
 
-    public bool EndToStart
-    {
-        get
-        {
-            return endToStart;
-        }
+    //public bool EndToStart
+    //{
+    //    get
+    //    {
+    //        return endToStart;
+    //    }
 
-        set
-        {
-            endToStart = value;
-        }
-    }
+    //    set
+    //    {
+    //        endToStart = value;
+    //    }
+    //}
 
     public int StreetNumber
     {
