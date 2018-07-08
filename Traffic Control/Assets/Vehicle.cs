@@ -1,8 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-abstract public class Vehicle : MonoBehaviour {
+public class Vehicle : MonoBehaviour {
     private long score;
     private Point pointInitVehicle;
     private Point pointDest;
@@ -12,14 +11,6 @@ abstract public class Vehicle : MonoBehaviour {
     private bool followSpecReq;
     private Type typeOfVehicle;
 
-
-    public Vehicle(Point pointInitVehicle, Type typeOfVehicle)
-    {
-        this.PointInitVehicle = pointInitVehicle;
-        this.TypeOfVehicle = typeOfVehicle;
-    }
-
-    abstract protected Point search();
     public void movement(Route route) { }
     public Route[] navigation(Point intialPoint, Point destPoint, bool isSpecReq) { }
     private void trafficComponentCheck() { }

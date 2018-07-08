@@ -1,11 +1,18 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class General : MonoBehaviour {
+public class General : Vehicle {
+    public General(Point pointInitVehicle, Type typeOfVehicle){}
 
-	// Use this for initialization
-	void Start () {
+    protected override Point search()
+    {
+        throw new NotImplementedException();
+    }
+
+    // Use this for initialization
+    void Start () {
 		
 	}
 	
