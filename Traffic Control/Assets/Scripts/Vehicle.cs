@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+
 public class Vehicle : MonoBehaviour {
     private long score;
     private Point pointInitVehicle;
