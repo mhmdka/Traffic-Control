@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class General : Type {
-    public General(Point pointInitVehicle, Type typeOfVehicle){}
+   
 
     protected override Point search()
     {

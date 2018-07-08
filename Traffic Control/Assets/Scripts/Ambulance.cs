@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Ambulance : Type {
-    public Ambulance(Point pointInitVehicle, Type typeOfVehicle) {}
+   
 
     protected override Point search()
     {
