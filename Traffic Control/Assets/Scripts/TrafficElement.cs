@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Traffic : MonoBehaviour {
+public class TrafficElement{
+
 
 	// Use this for initialization
 	void Start () {

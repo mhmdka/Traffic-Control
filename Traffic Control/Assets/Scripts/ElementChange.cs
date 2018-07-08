@@ -4,8 +4,27 @@ using UnityEngine;
 
 public class ElementChange : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
+    private Map map;
+    private Settings settings;
+    private Change change;
+
+    public Change Change
+    {
+        get
+        {
+            return change;
+        }
+
+        set
+        {
+            change = value;
+        }
+    }
+
+
+
+    // Use this for initialization
+    void Start () {
 		
 	}
 	

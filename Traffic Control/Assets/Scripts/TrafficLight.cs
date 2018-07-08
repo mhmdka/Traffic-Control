@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TrafficLight : MonoBehaviour {
+public class TrafficLight : TrafficElement {
 
 	// Use this for initialization
 	void Start () {

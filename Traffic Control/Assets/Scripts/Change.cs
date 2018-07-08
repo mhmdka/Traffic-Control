@@ -2,10 +2,41 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Change : MonoBehaviour {
+public class Change {
 
-	// Use this for initialization
-	void Start () {
+    private int changeType;
+    private Point location;
+
+    public int ChangeType
+    {
+        get
+        {
+            return changeType;
+        }
+
+        set
+        {
+            changeType = value;
+        }
+    }
+
+    public Point Location
+    {
+        get
+        {
+            return location;
+        }
+
+        set
+        {
+            location = value;
+        }
+    }
+
+
+
+    // Use this for initialization
+    void Start () {
 		
 	}
 	
