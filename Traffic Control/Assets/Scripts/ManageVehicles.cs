@@ -65,7 +65,7 @@ public class ManageVehicle : MonoBehaviour
 
 
 
-    // Use this for initialization
+    // Use this for initializations
     void Start()
     {
         //------------------ Temp Variables ------------------//
