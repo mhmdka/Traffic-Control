@@ -41,22 +41,16 @@ public class ManageVehicle : MonoBehaviour
 
     public void createVehicle(Type typeOfVehicle)
     {
-
-
-        //------------------ Temp Variables ------------------//
+    //------------------ Temp Variables ------------------//
         Point tmp_point;
-        //----------------------------------------------------//
-
-
-
-        //------------------- Program ------------------------//
+   
+    //------------------- Program ------------------------//
 
         tmp_point = randomPointGenerator();
         Vehicle tmp_vehicle = new Vehicle(tmp_point, typeOfVehicle);
+        vehicles.Add(tmp_vehicle);
 
-
-        //----------------------------------------------------//
-
+    //----------------------------------------------------//
 
     }
 
