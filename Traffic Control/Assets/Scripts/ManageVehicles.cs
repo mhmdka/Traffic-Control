@@ -69,11 +69,11 @@ public class ManageVehicle : MonoBehaviour
     void Start()
     {
         //------------------ Temp Variables ------------------//
-        General general = new General();
+        //General general = new General();
 
-        for (int i = 0; i < NUMBER_OF_VEHICLES;i++){
-            createVehicle(general);
-        }
+        //for (int i = 0; i < NUMBER_OF_VEHICLES;i++){
+        //    createVehicle(general);
+        //}
 
 
     }
