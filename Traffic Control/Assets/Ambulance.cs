@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Ambulance :Vehicle {
+public class Ambulance : Type {
     public Ambulance(Point pointInitVehicle, Type typeOfVehicle) {}
 
     protected override Point search()

@@ -12,7 +12,7 @@ public class Vehicle : MonoBehaviour {
     private Type typeOfVehicle;
 
     public void movement(Route route) { }
-    public Route[] navigation(Point intialPoint, Point destPoint, bool isSpecReq) { }
+    public Route[] navigation(Point intialPoint, Point destPoint, bool isSpecReq) { return null; }
     private void trafficComponentCheck() { }
 
     ///////////////////////////setter and getters///////////////////////////
