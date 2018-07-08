@@ -2,9 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Type : MonoBehaviour {
+abstract public class Type : MonoBehaviour {
 
-	// Use this for initialization
+    abstract protected Point search();
+    // Use this for initialization
 	void Start () {
 		
 	}

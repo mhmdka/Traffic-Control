@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Police : Vehicle {
+public class Police : Type {
 
     public Police(Point pointInitVehicle, Type typeOfVehicle) {}
     protected override Point search()

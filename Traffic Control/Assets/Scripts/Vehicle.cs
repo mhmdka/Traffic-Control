@@ -11,6 +11,11 @@ public class Vehicle : MonoBehaviour {
     private bool followSpecReq;
     private Type typeOfVehicle;
 
+    public Vehicle (Point pointInitVehicle, Type typeOfVehicle)
+    {
+        this.pointInitVehicle = pointInitVehicle;
+        this.typeOfVehicle = typeOfVehicle;
+    }
     public void movement(Route route) { }
     public Route[] navigation(Point intialPoint, Point destPoint, bool isSpecReq) { return null; }
     private void trafficComponentCheck() { }
