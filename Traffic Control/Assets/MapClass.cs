@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+[System.Serializable]
 public class MapClass : MonoBehaviour {
 
     private int length;
@@ -11,21 +11,23 @@ public class MapClass : MonoBehaviour {
     private Street[] streets;
     private Building[] buildings;
     private int[][] map;
+    private Save save;
+    private Settings settings;
 
-    
+
 
     public int Length
+    {
+        get
         {
-            get
-            {
-                return length;
-            }
-
-            set
-            {
-                length = value;
-            }
+            return length;
         }
+
+        set
+        {
+            length = value;
+        }
+    }
 
     public int Width
     {
@@ -105,10 +107,69 @@ public class MapClass : MonoBehaviour {
         }
     }
 
+    public void setCarNumber(float cn) {
+
+        settings.CarNumber = (int)cn;
+    }
+
+    
+
+
+    //SAVE & LOAD
+    public void saveData()
+    {
+        save = new Save
+        {
+            currentBuildingNumber = buildingNumber,
+            currentBuildings = Buildings,
+            currentLength = length,
+            currentMap = map,
+            currentWidth = width,
+            currentStreets = streets,
+            currentStreetNumber = streetNumber
+        };
+        save.SaveFile();
+    }
+
+    public void LoadFile()
+    {
+        save.LoadFile();
+        buildingNumber = save.currentBuildingNumber;
+        Buildings = save.currentBuildings;
+        length = save.currentLength;
+        map = save.currentMap;
+        width = save.currentWidth;
+        streets = save.currentStreets;
+        buildingNumber = save.currentStreetNumber;
+
+    }
+
+    public void test()
+    {
+        print("a");
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
     //Must be filled later!
     public MapClass() {
+        settings = new Settings();
         Streets = new Street[20];
         Buildings = new Building[20];
         Map = new int[length][];

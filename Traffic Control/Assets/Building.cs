@@ -2,12 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
+[System.Serializable]
+
+
 public class Building : MonoBehaviour {
     private Point topLeftCorner, bottomLeftCorner, topRightCorner, bottomRightCorner;
     private int area;
     private int trafficCoef;
     private readonly int elementType = 2;
     private int buildingNumber;
+    private int buildingType;
 
     public int Area
     {
@@ -48,6 +53,19 @@ public class Building : MonoBehaviour {
         set
         {
             buildingNumber = value;
+        }
+    }
+
+    public int BuildingType
+    {
+        get
+        {
+            return buildingType;
+        }
+
+        set
+        {
+            buildingType = value;
         }
     }
 
