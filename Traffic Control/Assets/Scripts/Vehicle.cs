@@ -11,8 +11,18 @@ public class Vehicle : MonoBehaviour {
     private bool followSpecReq;
     private Type typeOfVehicle;
 
+    private GameObject car;
+
+    //public Vehicle(){
+    //    car = Resources.Load("Car", typeof(GameObject)) as GameObject;
+    //    car.transform.position = new Vector2(0,0);
+    //    //Instantiate(car);
+    //}
     public Vehicle (Point pointInitVehicle, Type typeOfVehicle)
     {
+        car = Resources.Load("Car", typeof(GameObject)) as GameObject;
+        car.transform.position = new Vector2(0, 0);
+        Instantiate(car);
         this.pointInitVehicle = pointInitVehicle;
         this.typeOfVehicle = typeOfVehicle;
     }
@@ -27,8 +37,9 @@ public class Vehicle : MonoBehaviour {
     }
 
     public Point PointInitVehicle{
-        get{return pointInitVehicle;}
-        set{pointInitVehicle = value;}
+        get
+        { return pointInitVehicle; }
+               set{pointInitVehicle = value;}
     }
 
     public Point PointDest{

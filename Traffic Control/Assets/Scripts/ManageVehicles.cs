@@ -1,15 +1,22 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
-public class ManageVehicle : MonoBehaviour
+public class ManageVehicles : MonoBehaviour
 {
     //=================== properties ======================//
+    private readonly int MAP_WIDTH,MAP_LENGTH;
+
 
     protected bool isElementChanged = false;
     protected bool isEventOccured = false;
     protected bool isTrafficChanged = false;
     protected List<Vehicle> vehicles = new List<Vehicle>();
+    private System.Random rnd = new System.Random();
+    private MapClass mapClass = new MapClass(); //this has to be used in main class in static way
+
+
 
     //------------------ set/get -------------------------//
 
@@ -41,26 +48,25 @@ public class ManageVehicle : MonoBehaviour
 
     public void createVehicle(Type typeOfVehicle)
     {
-    //------------------ Temp Variables ------------------//
-        Point tmp_point;
-   
-    //------------------- Program ------------------------//
-
-        tmp_point = randomPointGenerator();
+        Point tmp_point = new Point(1,2);
+        //tmp_point = randomPointGenerator();
         Vehicle tmp_vehicle = new Vehicle(tmp_point, typeOfVehicle);
         vehicles.Add(tmp_vehicle);
-
-    //----------------------------------------------------//
-
     }
 
     //public void manageMovement(Events events)
     //{
 
     //}
+   
     private Point randomPointGenerator()
     {
-        throw new System.Exception();
+        
+        Point point = new Point();
+        int index = rnd.Next(0, mapClass.Streets.Length);
+        point = mapClass.Streets[index].GetStartPoint();
+        return point;
+
     }
 
 
@@ -68,13 +74,10 @@ public class ManageVehicle : MonoBehaviour
     // Use this for initializations
     void Start()
     {
-        //------------------ Temp Variables ------------------//
-        //General general = new General();
-
-        //for (int i = 0; i < NUMBER_OF_VEHICLES;i++){
-        //    createVehicle(general);
-        //}
-
+        General gn = new General();
+        for (int i = 0; i < 5; i++){
+            createVehicle(gn);
+        }
 
     }
 
