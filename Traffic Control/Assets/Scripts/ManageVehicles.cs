@@ -54,19 +54,26 @@ public class ManageVehicle : MonoBehaviour
 
     }
 
-    public void manageMovement(Events events)
-    {
+    //public void manageMovement(Events events)
+    //{
 
-    }
+    //}
     private Point randomPointGenerator()
     {
-
+        throw new System.Exception();
     }
+
+
 
     // Use this for initialization
     void Start()
     {
+        //------------------ Temp Variables ------------------//
+        General general = new General();
 
+        for (int i = 0; i < NUMBER_OF_VEHICLES;i++){
+            createVehicle(general);
+        }
 
 
     }
