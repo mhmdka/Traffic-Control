@@ -13,11 +13,11 @@ public static class MapClass
     private static int width;
     private static int streetNumber;
     private static int buildingNumber;
-    private static Street[] streets;
-    private static Building[] buildings;
-    private static int[][] map;
-    private static Save save;
-    private static Settings settings;
+    private static Street[] streets=new Street[streetNumber];
+    private static Building[] buildings=new Building[buildingNumber];
+    private static int[][] map=new int[length][];
+    private static Save save=new Save();
+    private static Settings settings = new Settings();
 
     public static Settings Settings
     {
