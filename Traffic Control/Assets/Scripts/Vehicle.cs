@@ -11,6 +11,14 @@ public class Vehicle : MonoBehaviour {
     private bool isVelocityChanged;
     private bool followSpecReq;
     private Type typeOfVehicle;
+    private Route route;
+
+    private MapClass mapClass = new MapClass(); //this has to be used in main class in static way
+
+    //.................GUI..............//
+    public Transform[] target;
+   
+   
 
     private GameObject car;
 
@@ -27,11 +35,31 @@ public class Vehicle : MonoBehaviour {
         this.pointInitVehicle = pointInitVehicle;
         this.typeOfVehicle = typeOfVehicle;
     }
-    public void movement(Route route) { }
-    public Route[] navigation(Point intialPoint, Point destPoint, bool isSpecReq) { return null; }
+
+    public void setTargets(Route route)
+    {
+        for(int i = 0; i<route.Streets.Length; i++)
+        {
+            target[i].position = new Vector2(route.Streets[i].GetEndPoint().X, route.Streets[i].GetEndPoint().Y);
+        }
+    }
+    public void movement(Route route) {
+
+    }
+
+    public void setShortestPath() { }
+    public Route[] navigation(Point initialPoint, Point destPoint, bool isSpecReq) {
+        if (isSpecReq) { }
+        this.pointInitVehicle = initialPoint;
+
+        return null; }
     private void trafficComponentCheck() { }
 
-    ///////////////////////////setter and getters///////////////////////////
+    
+    
+    
+    
+    //...................setter and getters.....................//
     public long Score{
         get{ return score;}
         set{ score = value;}
@@ -67,7 +95,20 @@ public class Vehicle : MonoBehaviour {
         get{return typeOfVehicle;}
         set{typeOfVehicle = value;}
     }
-   
+
+    public Route Route
+    {
+        get
+        {
+            return route;
+        }
+
+        set
+        {
+            route = value;
+        }
+    }
+
     // Use this for initialization
     void Start () {
 		
