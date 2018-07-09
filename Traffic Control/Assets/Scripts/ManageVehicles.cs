@@ -15,8 +15,7 @@ public class ManageVehicles : MonoBehaviour
     protected bool isTrafficChanged = false;
     protected List<Vehicle> vehicles = new List<Vehicle>();
     private System.Random rnd = new System.Random();
-    private MapClass mapClass = new MapClass(); //this has to be used in main class in static way
-
+    
 
 
     //----------- set/get ------------//
@@ -60,8 +59,8 @@ public class ManageVehicles : MonoBehaviour
 	{
 		
 		Point point = new Point();
-		int index = rnd.Next(0, mapClass.Streets.Length-1);
-		point = mapClass.Streets[index].GetStartPoint();
+		int index = rnd.Next(0, MapClass.Streets.Length-1);
+		point = MapClass.Streets[index].GetStartPoint();
 		return point;
 		
 	}
