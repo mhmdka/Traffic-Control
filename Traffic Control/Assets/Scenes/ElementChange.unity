@@ -454,6 +454,7 @@ GameObject:
   m_Component:
   - component: {fileID: 816657628}
   - component: {fileID: 816657629}
+  - component: {fileID: 816657630}
   m_Layer: 0
   m_Name: Creator
   m_TagString: Untagged
@@ -485,6 +486,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7d50b3c77f6b473dae04cdab4e07410, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &816657630
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 816657627}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7194866f2da6b4a61b27ae96c8bfc6c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  NUMBER_OF_VEHICLES: 4
 --- !u!1 &922184010
 GameObject:
   m_ObjectHideFlags: 0
@@ -1201,7 +1214,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1696579625
 GameObject:

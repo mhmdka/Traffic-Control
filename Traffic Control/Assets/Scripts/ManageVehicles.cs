@@ -54,7 +54,7 @@ public class ManageVehicles : MonoBehaviour
         Vehicle tmp_vehicle = new Vehicle(tmp_point, typeOfVehicle);
         vehicles.Add(tmp_vehicle);
     }
-	//-----------------------------------------
+	//----------------------------------------
 	
 	private Point randomPointGenerator()
 	{
@@ -74,6 +74,7 @@ public class ManageVehicles : MonoBehaviour
 
 
     //-----------------------------------------
+
 
 
 
