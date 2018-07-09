@@ -5,7 +5,7 @@ using UnityEngine;
 public class ElementChange : MonoBehaviour {
 
     private int [][] map = MapClass.Map;
-    private Settings settings = MapClass.;
+    private Settings settings = MapClass.Settings;
     private Change change;
     private Point clickedPoint = new Point();
 
