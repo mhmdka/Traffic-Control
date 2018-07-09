@@ -285,6 +285,20 @@ public static class MapClass
         }
 
     }
+    public static void AddResidentail(Point topLeft, Point topRight, Point bottomRight, Point bottomLeft)
+    {
+        int i;
+        for (i = 0; Buildings[i] != null; i++) ;
+        Buildings[i] = new Residential(topLeft, topRight, bottomRight, bottomLeft);
+        for (int j = 0; j <= System.Math.Abs(topLeft.Y - topRight.Y); j++)
+        {
+            for (int k = 0; k <= System.Math.Abs(topLeft.X - bottomRight.X); k++)
+            {
+                Map[topLeft.Y + j][topLeft.X + k] = 200 + Buildings[i].BuildingNumber;
+            }
+        }
+
+    }
     //// Use this for initialization
     //void Start()
     //{
