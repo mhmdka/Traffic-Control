@@ -6,8 +6,9 @@ using UnityEngine;
 public class FireTruck : Type {
 
 
-    protected override Point search()
+    protected override int search()
     {
+        for(int i = 0; i < )
         throw new NotImplementedException();
     }
     
