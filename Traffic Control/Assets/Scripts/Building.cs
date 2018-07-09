@@ -8,13 +8,13 @@ using UnityEngine;
 
 public class Building : MonoBehaviour {
     private Point topLeftCorner, bottomLeftCorner, topRightCorner, bottomRightCorner;
-<<<<<<< HEAD
+//<<<<<<< HEAD
     private int area;
     protected int trafficCoef;
-=======
-    private int area;   
-    private int trafficCoef;
->>>>>>> 6dd4334838c84b24519ec3d5c9e135c95379b3e5
+//=======
+    //private int area;   
+    //private int trafficCoef;
+//>>>>>>> 6dd4334838c84b24519ec3d5c9e135c95379b3e5
     private readonly int elementType = 2;
     private int buildingNumber;
     private int buildingType;

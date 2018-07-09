@@ -8,7 +8,7 @@ public class FireTruck : Type {
 
     protected override int search()
     {
-        for(int i = 0; i < )
+        //for(int i = 0; i < )
         throw new NotImplementedException();
     }
     

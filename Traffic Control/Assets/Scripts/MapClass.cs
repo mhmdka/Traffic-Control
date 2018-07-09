@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 
 [System.Serializable]
 
@@ -13,9 +13,10 @@ public static class MapClass
     private static int width;
     private static int streetNumber;
     private static int buildingNumber;
-    private static Street[] streets=new Street[streetNumber];
-    private static Building[] buildings=new Building[buildingNumber];
-    private static int[][] map=new int[length][];
+    private static Street[] streets = new Street[streetNumber];
+    private static Building[] buildings = new Building[buildingNumber];
+    private static int[][] map = new int[length][];
+    public static Button[][] mapButtons = new Button[20][];
     private static Save save=new Save();
     private static Settings settings = new Settings();
 
@@ -130,11 +131,17 @@ public static class MapClass
         }
     }
 
+
     public static  void setCarNumber(float cn)
     {
 
         settings.CarNumber = (int)cn;
     }
+
+
+
+
+
 
     public static void FillCostMatrix()
     {

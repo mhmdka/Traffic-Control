@@ -7,7 +7,7 @@ public class ElementChange : MonoBehaviour {
     private int [][] map = MapClass.Map;
     private Settings settings = MapClass.Settings;
     private Change change;
-    private Point clickedPoint = new Point();
+    //private Point clickedPoint = new Point();
 
     public Change Change
     {

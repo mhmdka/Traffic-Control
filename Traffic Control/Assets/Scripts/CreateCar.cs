@@ -15,9 +15,7 @@ public class CreateCar : MonoBehaviour {
 	}
 	
 	 //Update is called once per frame
-	void Update () {
-        car.transform.position = new Vector2(car.transform.position.x, car.transform.position.y + 1);
-        if (car.transform.position.x > panel.position.x + 10)
-            Destroy(car);
-	}
+	//void Update () {
+        
+	//}
 }
