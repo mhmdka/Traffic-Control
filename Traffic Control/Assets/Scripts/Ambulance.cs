@@ -6,7 +6,7 @@ using UnityEngine;
 public class Ambulance : Type {
    
 
-    protected override Point search()
+    protected override int search()
     {
         throw new NotImplementedException();
     }
