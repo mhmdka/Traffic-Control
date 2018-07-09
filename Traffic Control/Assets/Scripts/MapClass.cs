@@ -18,6 +18,7 @@ public class MapClass
     private int[][] map;
     private Save save;
     private Settings settings;
+    private int[][] costMetrics;
 
 
 
@@ -109,6 +110,19 @@ public class MapClass
         set
         {
             map = value;
+        }
+    }
+
+    public int[][] CostMetrics
+    {
+        get
+        {
+            return costMetrics;
+        }
+
+        set
+        {
+            costMetrics = value;
         }
     }
 

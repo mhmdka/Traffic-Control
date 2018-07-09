@@ -12,14 +12,13 @@ public class Vehicle : MonoBehaviour {
     private bool followSpecReq;
     private Type typeOfVehicle;
     private Route route;
+    private List<int> streetsInRoute;
+    private bool pathFound = false;
 
     private MapClass mapClass = new MapClass(); //this has to be used in main class in static way
 
     //.................GUI..............//
     public Transform[] target;
-   
-   
-
     private GameObject car;
 
     //public Vehicle(){
@@ -30,7 +29,7 @@ public class Vehicle : MonoBehaviour {
     public Vehicle (Point pointInitVehicle, Type typeOfVehicle)
     {
         car = Resources.Load("Car", typeof(GameObject)) as GameObject;
-        car.transform.position = new Vector2(0, 0);
+        car.transform.position = new Vector2(pointInitVehicle.X, pointInitVehicle.Y);
         Instantiate(car);
         this.pointInitVehicle = pointInitVehicle;
         this.typeOfVehicle = typeOfVehicle;
@@ -38,21 +37,71 @@ public class Vehicle : MonoBehaviour {
 
     public void setTargets(Route route)
     {
-        for(int i = 0; i<route.Streets.Length; i++)
+        for(int i = 0; i<route.Streets.Count; i++)
         {
             target[i].position = new Vector2(route.Streets[i].GetEndPoint().X, route.Streets[i].GetEndPoint().Y);
         }
     }
-    public void movement(Route route) {
+    public void movement(Route route, bool isSpecReq) {
 
     }
 
-    public void setShortestPath() { }
-    public Route[] navigation(Point initialPoint, Point destPoint, bool isSpecReq) {
-        if (isSpecReq) { }
-        this.pointInitVehicle = initialPoint;
-
-        return null; }
+    public void findPath(int currentStreet,int destStreet) {
+        if (!pathFound)
+        {
+            if (mapClass.CostMetrics[currentStreet][destStreet] != 0)
+            {
+                streetsInRoute.Add(destStreet);
+                pathFound = true;
+                return;
+            }
+            for (int i = 0; i < mapClass.Streets.Length; i++)
+            {
+                if (mapClass.CostMetrics[currentStreet][i] != 0)
+                {
+                    if (streetsInRoute.Contains(i))
+                    {
+                        continue;
+                    }
+                    streetsInRoute.Add(i);
+                    findPath(i, destStreet);
+                }
+            }
+            streetsInRoute.Remove(currentStreet);
+            return;
+        }
+        else return;
+    }
+        
+    public Route navigation(Point initialPoint, Point destPoint) {
+        car.transform.position = new Vector2(initialPoint.X, initialPoint.Y);
+        int currentStreet = 0;
+        int destStreet = 0;
+        for(int i = 0; i < mapClass.Streets.Length; i++)
+        {
+            if (Mathf.Abs(car.transform.position.x  - mapClass.Streets[i].GetStartPoint().X)< 5 && Mathf.Abs(car.transform.position.x - mapClass.Streets[i].GetStartPoint().X) < 5)
+            {
+                currentStreet = i;
+                break;
+            }
+        }
+        
+        for(int i = 0;i< mapClass.Streets.Length; i++)
+        {
+            if (destPoint == mapClass.Streets[i].GetStartPoint())
+            {
+                destStreet = i;
+                break;
+            }
+        }
+        this.streetsInRoute.Add(currentStreet);
+        findPath(currentStreet, destStreet);
+        this.pathFound = false;
+        for(int i = 0; i<streetsInRoute.Count; i++)
+        {
+            this.route.Streets.Add(mapClass.Streets[streetsInRoute[i]]);
+        }
+        return route; }
     private void trafficComponentCheck() { }
 
     

@@ -5,11 +5,11 @@ using UnityEngine;
 public class Route : MonoBehaviour {
 
     private Point initPoint, destPoint;
-    private Street[] streets;
+    private List <Street> streets;
 
     public Point InitPoint { get { return initPoint; } set { initPoint = value; } }
     public Point DestPoint { get { return destPoint; } set { destPoint = value; } }
-    public Street[] Streets { get { return streets; } set { streets = value; } }
+    public List<Street> Streets { get { return streets; } set { streets = value; } }
    
     // Use this for initialization
     void Start () {
