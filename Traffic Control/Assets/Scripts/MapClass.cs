@@ -18,6 +18,15 @@ public static class MapClass
     private static int[][] map;
     private static Save save;
     private static Settings settings;
+
+    public static Settings Settings
+    {
+        get
+        {
+            return settings;
+        }
+    }
+
     private static int[][] costMetrics;
 
 

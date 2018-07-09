@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class ElementChange : MonoBehaviour {
 
-    private Map map;
-    private Settings settings;
+    private int [][] map = MapClass.Map;
+    private Settings settings = MapClass.;
     private Change change;
+    private Point clickedPoint = new Point();
 
     public Change Change
     {
