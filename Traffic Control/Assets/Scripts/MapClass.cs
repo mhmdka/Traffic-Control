@@ -119,11 +119,6 @@ public class MapClass
         {
             return costMetrics;
         }
-
-        set
-        {
-            costMetrics = value;
-        }
     }
 
     public void setCarNumber(float cn)
@@ -132,7 +127,26 @@ public class MapClass
         settings.CarNumber = (int)cn;
     }
 
+    public void FillCostMatrix()
+    {
+        for (int t = 0; t < streetNumber; t++)
+            for (int j = 0; j < streetNumber; j++)
+                costMetrics[t][j] = 0;
 
+        for (int i = 0; i < streetNumber; i++)
+        {
+                for (int k = 0; k < streetNumber; k++) {
+                    if ((streets[i].GetEndPoint().X + 1 == streets[k].GetStartPoint().X) && ((streets[i].GetEndPoint().Y == streets[k].GetStartPoint().Y)))
+                        this.costMetrics[i][k] = (streets[i].Length + 1) * streets[i].TrafficCoef;
+                    if ((streets[i].GetEndPoint().X-1 == streets[k].GetStartPoint().X) && ((streets[i].GetEndPoint().Y == streets[k].GetStartPoint().Y)))
+                        this.costMetrics[i][k] = (streets[i].Length + 1) * streets[i].TrafficCoef;
+                    if ((streets[i].GetEndPoint().Y + 1 == streets[k].GetStartPoint().Y) && ((streets[i].GetEndPoint().X == streets[k].GetStartPoint().X)))
+                        this.costMetrics[i][k] = (streets[i].Length + 1) * streets[i].TrafficCoef;
+                    if ((streets[i].GetEndPoint().Y- 1 == streets[k].GetStartPoint().Y) && ((streets[i].GetEndPoint().X == streets[k].GetStartPoint().X)))
+                        this.costMetrics[i][k] = (streets[i].Length + 1) * streets[i].TrafficCoef;
+                }
+        }
+    }
 
 
     //SAVE & LOAD
