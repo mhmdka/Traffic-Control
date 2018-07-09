@@ -127,7 +127,7 @@ public static class MapClass
         settings.CarNumber = (int)cn;
     }
 
-    public void FillCostMatrix()
+    public static void FillCostMatrix()
     {
         for (int t = 0; t < streetNumber; t++)
             for (int j = 0; j < streetNumber; j++)
@@ -182,7 +182,7 @@ public static class MapClass
 
 
     //Must be filled later!
-    public MapClass()
+    public static MapClass()
     {   
         
         settings = new Settings();
@@ -191,7 +191,7 @@ public static class MapClass
         Map = new int[length][];
     }
 
-    public void AddStreet(Point start, Point end)
+    public static void AddStreet(Point start, Point end)
     {
         int i;
         for (i = 0; Streets[i] != null; i++) ;
@@ -234,7 +234,7 @@ public static class MapClass
 
     }
 
-    public void AddBuilding(Point topLeft, Point topRight, Point bottomRight, Point bottomLeft)
+    public static void AddBuilding(Point topLeft, Point topRight, Point bottomRight, Point bottomLeft)
     {
         int i;
         for (i = 0; Buildings[i] != null; i++) ;
@@ -250,15 +250,15 @@ public static class MapClass
     }
 
 
-    // Use this for initialization
-    void Start()
-    {
+    //// Use this for initialization
+    //void Start()
+    //{
 
-    }
+    //}
 
-    // Update is called once per frame
-    void Update()
-    {
+    //// Update is called once per frame
+    //void Update()
+    //{
 
-    }
+    //}
 }
