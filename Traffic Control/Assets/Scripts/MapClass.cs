@@ -137,13 +137,13 @@ public static class MapClass
         {
                 for (int k = 0; k < streetNumber; k++) {
                     if ((streets[i].GetEndPoint().X + 1 == streets[k].GetStartPoint().X) && ((streets[i].GetEndPoint().Y == streets[k].GetStartPoint().Y)))
-                        this.costMetrics[i][k] = (streets[i].Length + 1) * streets[i].TrafficCoef;
+                        costMetrics[i][k] = (streets[i].Length + 1) * streets[i].TrafficCoef;
                     if ((streets[i].GetEndPoint().X-1 == streets[k].GetStartPoint().X) && ((streets[i].GetEndPoint().Y == streets[k].GetStartPoint().Y)))
-                        this.costMetrics[i][k] = (streets[i].Length + 1) * streets[i].TrafficCoef;
+                        costMetrics[i][k] = (streets[i].Length + 1) * streets[i].TrafficCoef;
                     if ((streets[i].GetEndPoint().Y + 1 == streets[k].GetStartPoint().Y) && ((streets[i].GetEndPoint().X == streets[k].GetStartPoint().X)))
-                        this.costMetrics[i][k] = (streets[i].Length + 1) * streets[i].TrafficCoef;
+                        costMetrics[i][k] = (streets[i].Length + 1) * streets[i].TrafficCoef;
                     if ((streets[i].GetEndPoint().Y- 1 == streets[k].GetStartPoint().Y) && ((streets[i].GetEndPoint().X == streets[k].GetStartPoint().X)))
-                        this.costMetrics[i][k] = (streets[i].Length + 1) * streets[i].TrafficCoef;
+                        costMetrics[i][k] = (streets[i].Length + 1) * streets[i].TrafficCoef;
                 }
         }
     }
@@ -181,15 +181,15 @@ public static class MapClass
     }
 
 
-    //Must be filled later!
-    public static MapClass()
-    {   
+    ////Must be filled later!
+    //public static MapClass()
+    //{   
         
-        settings = new Settings();
-        Streets = new Street[20];
-        Buildings = new Building[20];
-        Map = new int[length][];
-    }
+    //    settings = new Settings();
+    //    Streets = new Street[20];
+    //    Buildings = new Building[20];
+    //    Map = new int[length][];
+    //}
 
     public static void AddStreet(Point start, Point end)
     {
