@@ -4,7 +4,7 @@ using UnityEngine;
 
 abstract public class Type : MonoBehaviour {
 
-    abstract protected int search();
+    abstract public  int search();
     // Use this for initialization
 	void Start () {
 		

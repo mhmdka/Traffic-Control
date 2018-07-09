@@ -14,6 +14,7 @@ public class Vehicle : MonoBehaviour {
     private Route route;
     private List<int> streetsInRoute;
     private bool pathFound = false;
+    private bool navIsfinish = true;
 
   
     //.................GUI..............//
@@ -27,9 +28,9 @@ public class Vehicle : MonoBehaviour {
     //}
     public Vehicle (Point pointInitVehicle, Type typeOfVehicle)
     {
-        car = Resources.Load("Car", typeof(GameObject)) as GameObject;
-        car.transform.position = new Vector2(pointInitVehicle.X, pointInitVehicle.Y);
-        Instantiate(car);
+        Car = Resources.Load("Car", typeof(GameObject)) as GameObject;
+        Car.transform.position = new Vector2(pointInitVehicle.X, pointInitVehicle.Y);
+        Instantiate(Car);
         this.pointInitVehicle = pointInitVehicle;
         this.typeOfVehicle = typeOfVehicle;
     }
@@ -41,7 +42,7 @@ public class Vehicle : MonoBehaviour {
             target[i].position = new Vector2(route.Streets[i].GetEndPoint().X, route.Streets[i].GetEndPoint().Y);
         }
     }
-    public void movement(Route route, bool isSpecReq) {
+    public void movement(Route route) { //to do
 
     }
 
@@ -73,12 +74,12 @@ public class Vehicle : MonoBehaviour {
     }
         
     public Route navigation(Point initialPoint, Point destPoint) {
-        car.transform.position = new Vector2(initialPoint.X, initialPoint.Y);
+        Car.transform.position = new Vector2(initialPoint.X, initialPoint.Y);
         int currentStreet = 0;
         int destStreet = 0;
         for(int i = 0; i < MapClass.Streets.Length; i++)
         {
-            if (Mathf.Abs(car.transform.position.x  - MapClass.Streets[i].GetStartPoint().X)< 5 && Mathf.Abs(car.transform.position.x - MapClass.Streets[i].GetStartPoint().X) < 5)
+            if (Mathf.Abs(Car.transform.position.x  - MapClass.Streets[i].GetStartPoint().X)< 34 && Mathf.Abs(Car.transform.position.x - MapClass.Streets[i].GetStartPoint().X) < 34)
             {
                 currentStreet = i;
                 break;
@@ -93,9 +94,11 @@ public class Vehicle : MonoBehaviour {
                 break;
             }
         }
+        this.streetsInRoute.Clear();
         this.streetsInRoute.Add(currentStreet);
         findPath(currentStreet, destStreet);
         this.pathFound = false;
+        this.route.Streets.Clear();
         for(int i = 0; i<streetsInRoute.Count; i++)
         {
             this.route.Streets.Add(MapClass.Streets[streetsInRoute[i]]);
@@ -108,7 +111,7 @@ public class Vehicle : MonoBehaviour {
     
     
     
-    //...................setter and getters.....................//
+    //...................setters and getters.....................//
     public long Score{
         get{ return score;}
         set{ score = value;}
@@ -155,6 +158,32 @@ public class Vehicle : MonoBehaviour {
         set
         {
             route = value;
+        }
+    }
+
+    public GameObject Car
+    {
+        get
+        {
+            return car;
+        }
+
+        set
+        {
+            car = value;
+        }
+    }
+
+    public bool NavIsfinish
+    {
+        get
+        {
+            return navIsfinish;
+        }
+
+        set
+        {
+            navIsfinish = value;
         }
     }
 

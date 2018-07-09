@@ -6,7 +6,7 @@ using UnityEngine;
 public class Ambulance : Type {
 
 
-    protected override int search()
+    public override int search()
     {
         int hospitalStreet = 0;
         for (int i = 0; i < MapClass.Buildings.Length; i++)

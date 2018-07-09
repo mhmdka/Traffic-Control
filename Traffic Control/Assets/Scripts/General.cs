@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class General : Type {
-    protected override int search()
+    public override int search()
     {
         throw new NotImplementedException();
         return -1;

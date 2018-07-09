@@ -13,6 +13,7 @@ public class ManageVehicles : MonoBehaviour
     protected bool isElementChanged = false;
     protected bool isEventOccured = false;
     protected bool isTrafficChanged = false;
+    private Event evenObject;
     protected List<Vehicle> vehicles = new List<Vehicle>();
     private System.Random rnd = new System.Random();
     
@@ -44,7 +45,22 @@ public class ManageVehicles : MonoBehaviour
         get;
     }
 
+    public Event EvenObject
+    {
+        get
+        {
+            return evenObject;
+        }
+
+        set
+        {
+            evenObject = value;
+        }
+    }
+
     //====================================== Methods ========================================//
+
+    
 
     public void createVehicle(Type typeOfVehicle)
     {
@@ -85,11 +101,48 @@ public class ManageVehicles : MonoBehaviour
             createVehicle(gn);
         }
 
+
     }
 
     // Update is called once per frame
     void Update()
-    {
+    {  
+            Point destPoint;
+            for (int i = 0; i < Vehicles.Count; i++)
+            {
+                if (Vehicles[i].NavIsfinish)
+                {
+                    Vehicles[i].NavIsfinish = false;
+                    destPoint = randomPointGenerator();
+                    if (Vehicles[i].Car.transform.position.x == destPoint.X && Vehicles[i].Car.transform.position.y == destPoint.Y)
+                    {
+                        Vehicles[i].NavIsfinish = true;
+                        continue;
+                    }
 
+                    Vehicles[i].navigation(new Point((int)Vehicles[i].Car.transform.position.x, (int)Vehicles[i].Car.transform.position.y)
+                        , destPoint);
+                    Vehicles[i].movement(Vehicles[i].Route);
+                }
+            }
+
+        if (isEventOccured || isTrafficChanged) {
+            
+            // when accident happens 
+            if (isEventOccured)
+            {
+                int ambulanceStreet;
+                Ambulance amb = new Ambulance();
+                ambulanceStreet = amb.search();
+                Vehicle ambulance = new Vehicle(MapClass.Streets[ambulanceStreet].GetStartPoint(), amb);
+                isEventOccured = false  ;
+            }
+
+            //when traffic is changed
+            if (isTrafficChanged)
+            {
+                isTrafficChanged = false;
+            }
+        }
     }
 }
