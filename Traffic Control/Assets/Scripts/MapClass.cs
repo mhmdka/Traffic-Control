@@ -160,7 +160,8 @@ public class MapClass
             currentMap = map,
             currentWidth = width,
             currentStreets = streets,
-            currentStreetNumber = streetNumber
+            currentStreetNumber = streetNumber,
+            currentCostMetrics = costMetrics
         };
         save.SaveFile();
     }
@@ -175,30 +176,15 @@ public class MapClass
         width = save.currentWidth;
         streets = save.currentStreets;
         buildingNumber = save.currentStreetNumber;
+        costMetrics = save.currentCostMetrics;
 
     }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     //Must be filled later!
     public MapClass()
-    {
+    {   
+        
         settings = new Settings();
         Streets = new Street[20];
         Buildings = new Building[20];

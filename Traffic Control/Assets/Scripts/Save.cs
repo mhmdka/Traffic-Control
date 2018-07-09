@@ -12,6 +12,7 @@ public class Save
      public Building[] currentBuildings;
      public int[][] currentMap;
      public Settings currentSettings;
+     public int[][] currentCostMetrics;
 
 
 
@@ -30,7 +31,7 @@ public class Save
         if (File.Exists(destination)) file = File.OpenWrite(destination);
         else file = File.Create(destination);
 
-        SimulationData data = new SimulationData(currentLength, currentWidth, currentStreetNumber, currentBuildingNumber, currentStreets, currentBuildings, currentMap, currentSettings);
+        SimulationData data = new SimulationData(currentLength, currentWidth, currentStreetNumber, currentBuildingNumber, currentStreets, currentBuildings, currentMap, currentSettings, currentCostMetrics);
         BinaryFormatter bf = new BinaryFormatter();
         bf.Serialize(file, data);
         file.Close();
@@ -60,6 +61,7 @@ public class Save
         currentBuildings = data.Buildings;
         currentMap = data.Map;
         currentSettings = data.Settings;
+        currentCostMetrics = data.CostMetrics;
 
         Debug.Log(data.Length);
         Debug.Log(data.Width);
@@ -69,6 +71,7 @@ public class Save
         Debug.Log(data.Buildings);
         Debug.Log(data.Map);
         Debug.Log(data.Settings);
+        Debug.Log(data.CostMetrics);
     }
 
 

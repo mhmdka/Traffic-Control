@@ -9,6 +9,7 @@ public class SimulationData
     private Building[] buildings;
     private int[][] map;
     private Settings settings;
+    private int[][] costMetrics;
 
     public int Length
     {
@@ -114,7 +115,20 @@ public class SimulationData
         }
     }
 
-    public SimulationData(int length, int width, int streetNumber, int buildingNumber, Street[] streets, Building[] buildings, int[][] map, Settings settings)
+    public int[][] CostMetrics
+    {
+        get
+        {
+            return costMetrics;
+        }
+
+        set
+        {
+            costMetrics = value;
+        }
+    }
+
+    public SimulationData(int length, int width, int streetNumber, int buildingNumber, Street[] streets, Building[] buildings, int[][] map, Settings settings, int[][] costMetrics)
     {
         this.Length = length;
         this.Width = width;
@@ -124,5 +138,6 @@ public class SimulationData
         this.Buildings = buildings;
         this.Map = map;
         this.Settings = settings;
+        this.costMetrics = costMetrics;
     }
 }
