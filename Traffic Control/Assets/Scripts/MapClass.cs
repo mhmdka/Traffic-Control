@@ -6,23 +6,23 @@ using UnityEngine;
 [System.Serializable]
 
 
-public class MapClass
+public static class MapClass
 {
 
-    private int length;
-    private int width;
-    private int streetNumber;
-    private int buildingNumber;
-    private Street[] streets;
-    private Building[] buildings;
-    private int[][] map;
-    private Save save;
-    private Settings settings;
-    private int[][] costMetrics;
+    private static int length;
+    private static int width;
+    private static int streetNumber;
+    private static int buildingNumber;
+    private static Street[] streets;
+    private static Building[] buildings;
+    private static int[][] map;
+    private static Save save;
+    private static Settings settings;
+    private static int[][] costMetrics;
 
 
 
-    public int Length
+    public static int Length
     {
         get
         {
@@ -35,7 +35,7 @@ public class MapClass
         }
     }
 
-    public int Width
+    public static  int Width
     {
         get
         {
@@ -48,7 +48,7 @@ public class MapClass
         }
     }
 
-    public int StreetNumber
+    public static  int StreetNumber
     {
         get
         {
@@ -61,7 +61,7 @@ public class MapClass
         }
     }
 
-    public int BuildingNumber
+    public static int BuildingNumber
     {
         get
         {
@@ -74,7 +74,7 @@ public class MapClass
         }
     }
 
-    public Street[] Streets
+    public static Street[] Streets
     {
         get
         {
@@ -87,7 +87,7 @@ public class MapClass
         }
     }
 
-    public Building[] Buildings
+    public static Building[] Buildings
     {
         get
         {
@@ -100,7 +100,7 @@ public class MapClass
         }
     }
 
-    public int[][] Map
+    public static int[][] Map
     {
         get
         {
@@ -113,7 +113,7 @@ public class MapClass
         }
     }
 
-    public int[][] CostMetrics
+    public static int[][] CostMetrics
     {
         get
         {
@@ -126,7 +126,7 @@ public class MapClass
         }
     }
 
-    public void setCarNumber(float cn)
+    public static  void setCarNumber(float cn)
     {
 
         settings.CarNumber = (int)cn;
@@ -136,7 +136,7 @@ public class MapClass
 
 
     //SAVE & LOAD
-    public void saveData()
+    public static void saveData()
     {
         save = new Save
         {
@@ -151,7 +151,7 @@ public class MapClass
         save.SaveFile();
     }
 
-    public void LoadFile()
+    public static void LoadFile()
     {
         save.LoadFile();
         buildingNumber = save.currentBuildingNumber;
