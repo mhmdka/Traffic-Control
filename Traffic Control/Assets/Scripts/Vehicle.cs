@@ -15,8 +15,7 @@ public class Vehicle : MonoBehaviour {
     private List<int> streetsInRoute;
     private bool pathFound = false;
 
-    private MapClass mapClass = new MapClass(); //this has to be used in main class in static way
-
+  
     //.................GUI..............//
     public Transform[] target;
     private GameObject car;
@@ -49,15 +48,15 @@ public class Vehicle : MonoBehaviour {
     public void findPath(int currentStreet,int destStreet) {
         if (!pathFound)
         {
-            if (mapClass.CostMetrics[currentStreet][destStreet] != 0)
+            if (MapClass.CostMetrics[currentStreet][destStreet] != 0)
             {
                 streetsInRoute.Add(destStreet);
                 pathFound = true;
                 return;
             }
-            for (int i = 0; i < mapClass.Streets.Length; i++)
+            for (int i = 0; i < MapClass.Streets.Length; i++)
             {
-                if (mapClass.CostMetrics[currentStreet][i] != 0)
+                if (MapClass.CostMetrics[currentStreet][i] != 0)
                 {
                     if (streetsInRoute.Contains(i))
                     {
@@ -77,18 +76,18 @@ public class Vehicle : MonoBehaviour {
         car.transform.position = new Vector2(initialPoint.X, initialPoint.Y);
         int currentStreet = 0;
         int destStreet = 0;
-        for(int i = 0; i < mapClass.Streets.Length; i++)
+        for(int i = 0; i < MapClass.Streets.Length; i++)
         {
-            if (Mathf.Abs(car.transform.position.x  - mapClass.Streets[i].GetStartPoint().X)< 5 && Mathf.Abs(car.transform.position.x - mapClass.Streets[i].GetStartPoint().X) < 5)
+            if (Mathf.Abs(car.transform.position.x  - MapClass.Streets[i].GetStartPoint().X)< 5 && Mathf.Abs(car.transform.position.x - MapClass.Streets[i].GetStartPoint().X) < 5)
             {
                 currentStreet = i;
                 break;
             }
         }
         
-        for(int i = 0;i< mapClass.Streets.Length; i++)
+        for(int i = 0;i< MapClass.Streets.Length; i++)
         {
-            if (destPoint == mapClass.Streets[i].GetStartPoint())
+            if (destPoint == MapClass.Streets[i].GetStartPoint())
             {
                 destStreet = i;
                 break;
@@ -99,7 +98,7 @@ public class Vehicle : MonoBehaviour {
         this.pathFound = false;
         for(int i = 0; i<streetsInRoute.Count; i++)
         {
-            this.route.Streets.Add(mapClass.Streets[streetsInRoute[i]]);
+            this.route.Streets.Add(MapClass.Streets[streetsInRoute[i]]);
         }
         return route; }
     private void trafficComponentCheck() { }
