@@ -101,7 +101,8 @@ public class Vehicle : MonoBehaviour {
             this.route.Streets.Add(MapClass.Streets[streetsInRoute[i]]);
         }
         return route; }
-    private void trafficComponentCheck() { }
+    private void trafficComponentCheck() { //to do
+    }
 
     
     

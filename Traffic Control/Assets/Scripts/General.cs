@@ -4,12 +4,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class General : Type {
-   
 
-    protected override int search()
-    {
-        throw new NotImplementedException();
-    }
+
+    
 
     // Use this for initialization
     void Start () {

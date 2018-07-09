@@ -5,11 +5,49 @@ using UnityEngine;
 
 public class Police : Type {
 
-   
+
     protected override int search()
     {
+        int policeStreet = 0;
+        for (int i = 0; i < MapClass.Buildings.Length; i++)
+        {
+            if (MapClass.Buildings[i] is PoliceStation)
+            {
+
+                for (int j = 0; j < MapClass.Streets.Length; j++)
+                {
+                    if (MapClass.Map[MapClass.Buildings[i].GetTopRightCorner().Y][MapClass.Buildings[i].GetTopRightCorner().X + 1] == 100 + MapClass.Streets[i].StreetNumber ||
+                        MapClass.Map[MapClass.Buildings[i].GetTopRightCorner().Y][MapClass.Buildings[i].GetTopRightCorner().X - 1] == 100 + MapClass.Streets[i].StreetNumber ||
+                        MapClass.Map[MapClass.Buildings[i].GetTopRightCorner().Y + 1][MapClass.Buildings[i].GetTopRightCorner().X] == 100 + MapClass.Streets[i].StreetNumber ||
+                        MapClass.Map[MapClass.Buildings[i].GetTopRightCorner().Y - 1][MapClass.Buildings[i].GetTopRightCorner().X] == 100 + MapClass.Streets[i].StreetNumber ||
+
+                        MapClass.Map[MapClass.Buildings[i].GetTopLeftCorner().Y][MapClass.Buildings[i].GetTopLeftCorner().X + 1] == 100 + MapClass.Streets[i].StreetNumber ||
+                        MapClass.Map[MapClass.Buildings[i].GetTopLeftCorner().Y][MapClass.Buildings[i].GetTopLeftCorner().X - 1] == 100 + MapClass.Streets[i].StreetNumber ||
+                        MapClass.Map[MapClass.Buildings[i].GetTopLeftCorner().Y + 1][MapClass.Buildings[i].GetTopLeftCorner().X] == 100 + MapClass.Streets[i].StreetNumber ||
+                        MapClass.Map[MapClass.Buildings[i].GetTopLeftCorner().Y - 1][MapClass.Buildings[i].GetTopLeftCorner().X] == 100 + MapClass.Streets[i].StreetNumber ||
+
+                        MapClass.Map[MapClass.Buildings[i].GetBottomRightCorner().Y][MapClass.Buildings[i].GetBottomRightCorner().X + 1] == 100 + MapClass.Streets[i].StreetNumber ||
+                        MapClass.Map[MapClass.Buildings[i].GetBottomRightCorner().Y][MapClass.Buildings[i].GetBottomRightCorner().X - 1] == 100 + MapClass.Streets[i].StreetNumber ||
+                        MapClass.Map[MapClass.Buildings[i].GetBottomRightCorner().Y + 1][MapClass.Buildings[i].GetBottomRightCorner().X] == 100 + MapClass.Streets[i].StreetNumber ||
+                        MapClass.Map[MapClass.Buildings[i].GetBottomRightCorner().Y - 1][MapClass.Buildings[i].GetBottomRightCorner().X] == 100 + MapClass.Streets[i].StreetNumber ||
+
+                         MapClass.Map[MapClass.Buildings[i].GetBottomLeftCorner().Y][MapClass.Buildings[i].GetBottomLeftCorner().X + 1] == 100 + MapClass.Streets[i].StreetNumber ||
+                        MapClass.Map[MapClass.Buildings[i].GetBottomLeftCorner().Y][MapClass.Buildings[i].GetBottomLeftCorner().X - 1] == 100 + MapClass.Streets[i].StreetNumber ||
+                        MapClass.Map[MapClass.Buildings[i].GetBottomLeftCorner().Y + 1][MapClass.Buildings[i].GetBottomLeftCorner().X] == 100 + MapClass.Streets[i].StreetNumber ||
+                        MapClass.Map[MapClass.Buildings[i].GetBottomLeftCorner().Y - 1][MapClass.Buildings[i].GetBottomLeftCorner().X] == 100 + MapClass.Streets[i].StreetNumber
+                        )
+                    {
+                        policeStreet = MapClass.Streets[i].StreetNumber;
+                    }
+
+                }
+            }
+
+        }
+        return policeStreet;
         throw new NotImplementedException();
     }
+
 
     // Use this for initialization
     void Start () {
