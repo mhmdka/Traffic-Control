@@ -6,11 +6,10 @@ using UnityEngine;
 public class FireTruck : Type {
 
 
-    protected override int search()
+    public override int search()
     {
-<<<<<<< HEAD
-        //for(int i = 0; i < )
-=======
+
+
         int fireStreet = 0;
         for (int i = 0; i < MapClass.Buildings.Length; i++)
         {
@@ -48,7 +47,6 @@ public class FireTruck : Type {
 
         }
         return fireStreet;
->>>>>>> cabbef132078babfb42c9c615c9fb77e4f39fba2
         throw new NotImplementedException();
     }
     

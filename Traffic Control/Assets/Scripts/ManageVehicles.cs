@@ -122,7 +122,7 @@ public class ManageVehicles : MonoBehaviour
 
                     Vehicles[i].navigation(new Point((int)Vehicles[i].Car.transform.position.x, (int)Vehicles[i].Car.transform.position.y)
                         , destPoint);
-                    Vehicles[i].movement(Vehicles[i].Route);
+                    Vehicles[i].movement();
                 }
             }
 
@@ -131,10 +131,19 @@ public class ManageVehicles : MonoBehaviour
             // when accident happens 
             if (isEventOccured)
             {
-                int ambulanceStreet;
-                Ambulance amb = new Ambulance();
-                ambulanceStreet = amb.search();
-                Vehicle ambulance = new Vehicle(MapClass.Streets[ambulanceStreet].GetStartPoint(), amb);
+                if(EvenObject is Rain)
+                {
+
+                }
+                if (EvenObject is Fire) {
+                    int ambulanceStreet;
+                    Ambulance amb = new Ambulance();
+                    ambulanceStreet = amb.search();
+                    Vehicle ambulance = new Vehicle(MapClass.Streets[ambulanceStreet].GetStartPoint(), amb);
+                    ambulance.navigation(MapClass.Streets[ambulanceStreet].GetStartPoint(), this.EvenObject.Point); //sina will add
+                    ambulance.movement();
+                }
+                
                 isEventOccured = false  ;
             }
 

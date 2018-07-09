@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4533645068375350}
   - component: {fileID: 212598738903685260}
   m_Layer: 0
-  m_Name: Car
+  m_Name: FireTruck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -28,7 +28,18 @@ public class Vehicle : MonoBehaviour {
     //}
     public Vehicle (Point pointInitVehicle, Type typeOfVehicle)
     {
+        if(typeOfVehicle is General)
         Car = Resources.Load("Car", typeof(GameObject)) as GameObject;
+
+        if (typeOfVehicle is Ambulance)
+        Car = Resources.Load("Ambulance", typeof(GameObject)) as GameObject;
+
+        if (typeOfVehicle is FireTruck)
+        Car = Resources.Load("Car", typeof(GameObject)) as GameObject;
+
+        if (typeOfVehicle is Police)
+        Car = Resources.Load("Police", typeof(GameObject)) as GameObject;
+
         Car.transform.position = new Vector2(pointInitVehicle.X, pointInitVehicle.Y);
         Instantiate(Car);
         this.pointInitVehicle = pointInitVehicle;
@@ -42,7 +53,9 @@ public class Vehicle : MonoBehaviour {
             target[i].position = new Vector2(route.Streets[i].GetEndPoint().X, route.Streets[i].GetEndPoint().Y);
         }
     }
-    public void movement(Route route) { //to do
+    public void movement() {
+        this.NavIsfinish = true;
+        //to do
 
     }
 
