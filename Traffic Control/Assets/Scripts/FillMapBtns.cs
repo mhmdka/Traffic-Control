@@ -10,7 +10,7 @@ public class FillMapBtns : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         MapClass.mapButtons[RowofArray] = this.GetComponentsInChildren<Button>();
-        MapClass.mapButtons[0][0].gameObject.GetComponent<Image>().enabled = false;
+        //MapClass.mapButtons[0][0].gameObject.GetComponent<Image>().enabled = false;
 	}
 	
 	// Update is called once per frame
