@@ -5,7 +5,9 @@ using UnityEngine.UI;
 
 [System.Serializable]
 
-
+// We have a 2D int array as the basic form of our map.There is a 3 digit number in every block of this array.
+//the first digit is the code of the element we have placed there and the 2 other digits are the name of that element
+//Streets are represented be 1-- and buildings by 2--
 public static class MapClass
 {
 
