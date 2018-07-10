@@ -13,6 +13,7 @@ public class ManageVehicles : MonoBehaviour
     protected bool isElementChanged = false;
     protected bool isEventOccured = false;
     protected bool isTrafficChanged = false;
+    private Change changeObject;
     private Event evenObject;
     protected List<Vehicle> vehicles = new List<Vehicle>();
     private System.Random rnd = new System.Random();
@@ -58,9 +59,22 @@ public class ManageVehicles : MonoBehaviour
         }
     }
 
+    public Change ChangeObject
+    {
+        get
+        {
+            return changeObject;
+        }
+
+        set
+        {
+            changeObject = value;
+        }
+    }
+
     //====================================== Methods ========================================//
 
-    
+
 
     public void createVehicle(Type typeOfVehicle)
     {
@@ -100,7 +114,7 @@ public class ManageVehicles : MonoBehaviour
     
     private void manageTrafficChange()
     {
-        //to do
+
     }
     // Use this for initializations
     void Start()
