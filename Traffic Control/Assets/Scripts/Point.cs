@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 [System.Serializable]
-public class Point : MonoBehaviour {
+public class Point {
 
     private int x=0, y=0;
 

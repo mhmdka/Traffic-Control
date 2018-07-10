@@ -5,7 +5,6 @@ using UnityEngine;
 public class Change {
 
     private int changeType;
-    private Point location;
 
     public int ChangeType
     {
@@ -20,28 +19,9 @@ public class Change {
         }
     }
 
-    public Point Location
+    public Change(int changeType)
     {
-        get
-        {
-            return location;
-        }
+        ChangeType = changeType;
 
-        set
-        {
-            location = value;
-        }
     }
-
-
-
-    // Use this for initialization
-    void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
 }

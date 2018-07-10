@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 [System.Serializable]
 
-public class Settings : MonoBehaviour
+public class Settings
 {
 
     //public Slider simDurationSlider;
