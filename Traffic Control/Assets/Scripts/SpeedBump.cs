@@ -4,13 +4,8 @@ using UnityEngine;
 
 public class SpeedBump : TrafficElement {
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    public SpeedBump()
+    {
+        this.streetSpeedChange = 10;
+    }
 }

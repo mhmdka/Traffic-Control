@@ -13,6 +13,7 @@ public class Street : MonoBehaviour {
    // private bool endToStart;
    // private bool startToEnd;
     private int streetNumber;
+    private TrafficElement[] trafficElements;
 
     public int Length
     {
@@ -55,6 +56,34 @@ public class Street : MonoBehaviour {
             return elementType;
         }
     }
+
+    public int StreetNumber
+    {
+        get
+        {
+            return streetNumber;
+        }
+
+        set
+        {
+            streetNumber = value;
+        }
+    }
+
+    public TrafficElement[] TrafficElements
+    {
+        get
+        {
+            return trafficElements;
+        }
+
+        set
+        {
+            trafficElements = value;
+        }
+    }
+
+    public Street() { }
 
     public void SetStartPoint(int x,int y)
     {
@@ -117,20 +146,7 @@ public class Street : MonoBehaviour {
     //    }
     //}
 
-    public int StreetNumber
-    {
-        get
-        {
-            return streetNumber;
-        }
 
-        set
-        {
-            streetNumber = value;
-        }
-    }
-
-    public Street() { }
 
     // NOT COMPLETE
 

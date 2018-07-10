@@ -3,14 +3,41 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class TrafficLight : TrafficElement {
+    private int greenLightDuration;
+    private int redLightDuraton;
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    public TrafficLight(int greenLightDuration, int redLightDuraton)
+    {
+        this.GreenLightDuration = greenLightDuration;
+        this.RedLightDuraton = redLightDuraton;
+        this.streetSpeedChange = 10;
+    }
+
+    public int GreenLightDuration
+    {
+        get
+        {
+            return greenLightDuration;
+        }
+
+        set
+        {
+            greenLightDuration = value;
+        }
+    }
+
+    public int RedLightDuraton
+    {
+        get
+        {
+            return redLightDuraton;
+        }
+
+        set
+        {
+            redLightDuraton = value;
+        }
+    }
+
+
 }
