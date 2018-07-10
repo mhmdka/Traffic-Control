@@ -9,7 +9,7 @@ public class Vehicle : MonoBehaviour {
     private bool isSpecReq;
     private int velocity;
     private bool isVelocityChanged;
-    private bool followSpecReq;
+    private bool isSpecRoute;
     private Type typeOfVehicle;
     private Route route;
     private List<int> streetsInRoute;
@@ -151,9 +151,9 @@ public class Vehicle : MonoBehaviour {
         set{isVelocityChanged = value;}
     }
 
-    public bool FollowSpecReq{
-        get{return followSpecReq;}
-        set{followSpecReq = value;}
+    public bool IsSpecRoute{
+        get{return isSpecRoute;}
+        set{isSpecRoute = value;}
     }
 
     public Type TypeOfVehicle{

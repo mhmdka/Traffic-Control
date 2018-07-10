@@ -69,7 +69,7 @@ public class ManageVehicles : MonoBehaviour
         Vehicle tmp_vehicle = new Vehicle(tmp_point, typeOfVehicle);
         vehicles.Add(tmp_vehicle);
     }
-	//----------------------------------------
+	
 	
 	private Point randomPointGenerator()
 	{
@@ -80,19 +80,28 @@ public class ManageVehicles : MonoBehaviour
 		return point;
 		
 	}
-    //---------------------------------------
 
-    //public void manageMovement(Events events)
-    //{
+    private void manageEvent()
+    {
+        if (EvenObject is Rain)
+        {
 
-    //}
-
-
-    //-----------------------------------------
-
-
-
-
+        }
+        if (EvenObject is Fire)
+        {
+            int ambulanceStreet;
+            Ambulance amb = new Ambulance();
+            ambulanceStreet = amb.search();
+            Vehicle ambulance = new Vehicle(MapClass.Streets[ambulanceStreet].GetStartPoint(), amb);
+            ambulance.navigation(MapClass.Streets[ambulanceStreet].GetStartPoint(), this.EvenObject.Point); //sina will add
+            ambulance.movement();
+        }
+    }
+    
+    private void manageTrafficChange()
+    {
+        //to do
+    }
     // Use this for initializations
     void Start()
     {
@@ -131,19 +140,7 @@ public class ManageVehicles : MonoBehaviour
             // when accident happens 
             if (isEventOccured)
             {
-                if(EvenObject is Rain)
-                {
-
-                }
-                if (EvenObject is Fire) {
-                    int ambulanceStreet;
-                    Ambulance amb = new Ambulance();
-                    ambulanceStreet = amb.search();
-                    Vehicle ambulance = new Vehicle(MapClass.Streets[ambulanceStreet].GetStartPoint(), amb);
-                    ambulance.navigation(MapClass.Streets[ambulanceStreet].GetStartPoint(), this.EvenObject.Point); //sina will add
-                    ambulance.movement();
-                }
-                
+                manageEvent();
                 isEventOccured = false  ;
             }
 
